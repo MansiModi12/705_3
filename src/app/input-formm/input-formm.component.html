@@ -1,0 +1,34 @@
+<form name="UserForm" #UserForm="ngForm" (ngSubmit)="OnSubmit()">
+    <div class="form-group">
+        <label for="inputUserName">Enter UserName</label>
+        <input type="text" class="form-control" id="inputUserName" placeholder="Enter UserName"
+            [(ngModel)]="User.userName" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Enter Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email" [(ngModel)]="User.email"
+            [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="inputPWD">Enter Password</label>
+        <input type="password" class="form-control" id="inputPWD" placeholder="Enter password"
+            [(ngModel)]="User.password" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Enter Address</label>
+        <textarea cols="20" rows="4" id="inputAddress" [(ngModel)]="User.address" placeholder="Enter Address"
+            [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div style="margin-top: 15px;">
+    <div *ngIf="User!=null">
+        <table>
+            <td>{{User.userName}}</td>
+            <td>{{User.email}}</td>
+            <td>{{User.password}}</td>
+            <td>{{User.address}}</td>
+        </table>
+    </div>
+</div>

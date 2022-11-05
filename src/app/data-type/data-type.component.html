@@ -1,0 +1,27 @@
+<h1>Displaying Data type</h1>
+<p><b>RollNo :</b> {{RollNo}}</p>
+<p><b>Name :</b> {{Name}}</p>
+<p><b>DOB :</b> {{DOB | date}}</p>
+<hr>
+<h2>HTML List</h2>
+<ul *ngFor="let a of arr">
+    <li>{{a}}
+    </li>
+</ul>
+<hr>
+<h3>Array</h3>
+<select>
+    <option *ngFor="let b of arr" [value]="b">{{b}}</option>
+</select>
+<hr>
+<select (change)="ChangeEvent($event)">
+    <option *ngFor="let b of options" [value]="b">{{b}}</option>
+</select>
+
+<div style="margin-top: 15px;">
+<div>
+    <input type="text" *ngIf="value=='textbox'">
+    <textarea cols="20" rows="4" *ngIf="value=='textarea'"></textarea>
+</div>
+</div>
+
